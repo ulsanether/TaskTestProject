@@ -15,8 +15,11 @@
     <!--Task Status Background-->
     <SolidColorBrush x:Key="TaskStatusBackground" Color="#FFF6F6F6" />
     <!--Default Text -->
-
     <SolidColorBrush x:Key="DefaultText" Color="#FF474747" />
+
+
+   <!--Borders -->
+    <SolidColorBrush x:Key="Borders" Color="#FFCCCCCC"/>
 
 
     <!-- On Accent-->

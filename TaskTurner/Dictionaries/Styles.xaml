@@ -14,10 +14,11 @@
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="Padding" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Margin="{TemplateBinding Margin}" Padding="{TemplateBinding Padding}" CornerRadius="20" >
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" CornerRadius="20" >
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
 
@@ -37,4 +38,22 @@
 
         </Setter>
     </Style>
+
+<!-- Task List Serach Box-->
+    <Style x:Key="TaskListSerachBox" TargetType="TextBox">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Borders}" />
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="20 0 50 0" />
+        <Setter Property="Cursor" Value="IBeam" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border Background="{StaticResource Borders}"/>
+                </ControlTemplate>
+</Setter.Value>
+</Setter>
+
+    </Style>
+
 </ResourceDictionary>

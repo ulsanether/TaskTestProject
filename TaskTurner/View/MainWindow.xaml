@@ -30,15 +30,28 @@
             </Grid.RowDefinitions>
             <!-- Task Label-->
             <Label Style="{StaticResource Heading1}"
-             Content="Tasks " VerticalAlignment="Center" Padding="20 0 0 0" IsHitTestVisible="False"/>
+             Content="Tasks"
+             VerticalAlignment="Center" 
+             Padding="20 0 0 0"
+             IsHitTestVisible="False"/>
+            <!-- Add new Task button -->
             <Button Style="{StaticResource RoundAccentButton}"
-                HorizontalAlignment="Right" VerticalAlignment="Center" Height="40" Width="40" Margin="0,0,20,0" >
+             HorizontalAlignment="Right"
+             VerticalAlignment="Center"
+             Height="40" 
+             Width="40"
+             Margin="0,0,20,0" >
 
-<!--Icon -->
-
+                <!--Icon -->
+                <Viewbox Width="16" Height="16">
+                    <Path Data="{StaticResource NewTaskIcon}" Fill="{StaticResource OnAccent}"/>
+                </Viewbox>
+            </Button>
+            <TextBox Style="{StaticResource TaskListSerachBox}" Grid.Row="1" Margin="20 0"/>
+            <Button Grid.Row="1" HorizontalAlignment="Right" Margin="0 0 40 0"  Padding="5">
+                <Path Data="{StaticResource NewTaskIcon}" Fill="{StaticResource OnAccent}"/>
             </Button>
         </Grid>
-
         <!-- Task Status Bar-->
         <Rectangle Fill="{StaticResource TaskStatusBackground}" Grid.Column="3"/>
 
