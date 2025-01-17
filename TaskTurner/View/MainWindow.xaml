@@ -49,7 +49,9 @@
             </Button>
             <TextBox Style="{StaticResource TaskListSerachBox}" Grid.Row="1" Margin="20 0"/>
             <Button Grid.Row="1" HorizontalAlignment="Right" Margin="0 0 40 0"  Padding="5">
-                <Path Data="{StaticResource NewTaskIcon}" Fill="{StaticResource OnAccent}"/>
+                <Viewbox>
+                    <Path Data="{StaticResource SerchIcon}" Fill="{StaticResource OnAccent}"/>
+                </Viewbox>
             </Button>
         </Grid>
         <!-- Task Status Bar-->
