@@ -63,7 +63,7 @@
                 Grid.Row="1"
                 Margin="40,0,0,0"
                 VerticalAlignment="Center"
-                Content="Search Task..."
+                Content="Search Tadsk..."
                 Cursor=""
                 Foreground="{StaticResource Borders}"
                 IsHitTestVisible="False"
@@ -89,12 +89,10 @@
             <!--  List View  -->
             <ListView
                 Grid.Row="2"
-                Padding="0,20"
-                Background="Transparent" />
-
-
+                Margin="0,20"
+                Background="Transparent"
+                BorderBrush="Transparent" />
         </Grid>
-
         <!--  Task Viewer  -->
 
         <Grid Grid.Column="2" Margin="20,0">
@@ -104,16 +102,49 @@
                 <RowDefinition Height="60" />
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Task Title" />
-        </Grid>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="60" />
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="30" />
-            </Grid.RowDefinitions>
-        </Grid>
+            <!--  Task Details  -->
 
+            <Grid Margin="20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+
+
+                <!--  Importance Title  -->
+                <TextBlock
+                    VerticalAlignment="Center"
+                    Style="{StaticResource Title}"
+                    Text="Task Title" />
+                <!--  Importance badge  -->
+                <Border
+                    Padding="20,5"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Background="{StaticResource Importance-Crit}"
+                    CornerRadius="5">
+                    <TextBlock
+                        FontSize="18"
+                        FontWeight="Normal"
+                        Foreground="Black"
+                        Text="Cretical" />
+                </Border>
+
+                <!--  Description scroll viewer  -->
+                <ScrollViewer
+                    Grid.Row="1"
+                    HorizontalScrollBarVisibility="Disabled"
+                    VerticalScrollBarVisibility="Auto">
+                    <!--  Description  -->
+                    <TextBlock
+                        Margin="0,20"
+                        FontSize="16"
+                        Foreground="{StaticResource PlaceholderText}"
+                        Text="This is a short description test...." />
+                </ScrollViewer>
+            </Grid>
+        </Grid>
 
 
         <!--  Task Status Bar  -->
