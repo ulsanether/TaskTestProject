@@ -6,11 +6,39 @@
     xmlns:local="clr-namespace:TaskTurner"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainWindow"
-    Width="1280"
+    Width="1150"
     Height="832"
+    MinWidth="1150"
+    MinHeight="500"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Grid>
+    <Window.Resources>
+
+        <Storyboard x:Key="SlideOnLoad">
+            <DoubleAnimation
+                Storyboard.TargetProperty="Opacity"
+                From="0.0"
+                To="1.0"
+                Duration="0:0:1" />
+            <ThicknessAnimation
+                Storyboard.TargetProperty="Margin"
+                From="0,100,0,0"
+                To="0,0,0,0"
+                Duration="0:0:1">
+                <ThicknessAnimation.EasingFunction>
+                    <ExponentialEase EasingMode="EaseOut" />
+                </ThicknessAnimation.EasingFunction>
+            </ThicknessAnimation>
+        </Storyboard>
+    </Window.Resources>
+
+    <Grid Margin="0,100,0,0" Opacity="0">
+        <Grid.Triggers>
+
+            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                <BeginStoryboard Storyboard="{StaticResource SlideOnLoad}" />
+            </EventTrigger>
+        </Grid.Triggers>
         <Grid.ColumnDefinitions>
 
             <ColumnDefinition Width="80" />
@@ -20,17 +48,44 @@
         </Grid.ColumnDefinitions>
         <!--  Nav pane  -->
         <Rectangle Fill="{StaticResource AccentDark}" />
+        <StackPanel Margin="10,15,10,10">
+            <Button Style="{StaticResource TaskNavButton}">
+                <Viewbox
+                    Width="25"
+                    Height="25"
+                    HorizontalAlignment="Center">
+                    <Path Data="{StaticResource ListIcon}" Fill="White" />
+                </Viewbox>
+            </Button>
 
+            <Button Style="{StaticResource TaskNavButton}">
+                <Viewbox
+                    Width="35"
+                    Height="35"
+                    HorizontalAlignment="Center">
+                    <Path Data="{StaticResource TickIcon}" Fill="White" />
+                </Viewbox>
+            </Button>
+            <Button Style="{StaticResource TaskNavButton}">
+                <Viewbox
+                    Width="25"
+                    Height="25"
+                    HorizontalAlignment="Center">
+                    <Path Data="{StaticResource TimeIcon}" Fill="White" />
+                </Viewbox>
+            </Button>
+        </StackPanel>
         <!--  Task List Background  -->
         <Rectangle Grid.Column="1" Fill="{StaticResource TaskListBackground}" />
 
 
         <!--  Task List Grid =  -->
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1" Opacity="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40" />
                 <RowDefinition Height="60" />
-                <RowDefinition Height="1*" />
+                <RowDefinition Height="119*" />
+                <RowDefinition Height="597*" />
             </Grid.RowDefinitions>
             <!--  Task Label  -->
             <Label
@@ -43,8 +98,8 @@
             <Button
                 Width="40"
                 Height="40"
-                Margin="0,0,20,0"
-                HorizontalAlignment="Right"
+                Margin="385,0,0,0"
+                HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                 Style="{StaticResource RoundAccentButton}">
 
@@ -56,7 +111,7 @@
             <TextBox
                 x:Name="TextSerchBox"
                 Grid.Row="1"
-                Margin="20,0"
+                Margin="20,0,20,0"
                 Style="{StaticResource TaskListSerachBox}" />
 
             <Label
@@ -73,9 +128,9 @@
                 Grid.Row="1"
                 Width="30"
                 Height="30"
-                Margin="0,0,30,0"
+                Margin="385,0,0,0"
                 Padding="5"
-                HorizontalAlignment="Right"
+                HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                 Background="White"
                 BorderBrush="Transparent"
@@ -89,7 +144,8 @@
             <!--  List View  -->
             <ListView
                 Grid.Row="2"
-                Margin="0,20"
+                Grid.RowSpan="2"
+                Margin="0,20,0,20"
                 Background="Transparent"
                 BorderBrush="Transparent" />
         </Grid>
@@ -125,7 +181,7 @@
                     Background="{StaticResource Importance-Crit}"
                     CornerRadius="5">
                     <TextBlock
-                        FontSize="18"
+                        FontSize="12"
                         FontWeight="Normal"
                         Foreground="Black"
                         Text="Cretical" />
@@ -206,6 +262,16 @@
         <!--  Task Status Bar  -->
         <Rectangle Grid.Column="3" Fill="{StaticResource TaskStatusBackground}" />
 
+        <!--  Task status  -->
+        <Grid Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="230" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="140" />
+            </Grid.RowDefinitions>
 
+
+
+        </Grid>
     </Grid>
 </Window>
