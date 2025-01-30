@@ -1,0 +1,139 @@
+﻿<Window
+    x:Class="TaskTurner.View.NewTaskWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TaskTurner.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="NewTaskWindow"
+    Width="500"
+    Height="650"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid Margin="20,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="40" />
+
+        </Grid.RowDefinitions>
+
+        <!--  Title  -->
+        <TextBox
+            x:Name="TaskTitle"
+            Grid.Row="0"
+            Margin="10,5,20,10"
+            BorderBrush="{StaticResource Borders}"
+            BorderThickness="1"
+            FontSize="16"
+
+            Style="{StaticResource NewTitleTextBox}" />
+        <TextBox
+            x:Name="TaskDesc"
+            Grid.Row="1"
+            Margin="20,5,20,8"
+            HorizontalContentAlignment="Left"
+            VerticalContentAlignment="Top"
+            AcceptsReturn="True"
+            BorderBrush="{StaticResource Borders}"
+            BorderThickness="1"
+            FontSize="16"
+            FontWeight="Normal"
+            IsInactiveSelectionHighlightEnabled="True"
+            IsUndoEnabled="True"
+            Style="{StaticResource NewTextBox}"
+            TextAlignment="Left" />
+        <Label
+            Grid.Row="1"
+            Margin="20,10"
+            Content="Task Title..."
+            IsHitTestVisible="False"
+            Visibility="{Binding Text.IsEmpty, ElementName=TaskDesc, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+        <!--  Task check list item adder  -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox
+                Margin="20,5"
+                VerticalContentAlignment="Center"
+                BorderBrush="{StaticResource Borders}"
+                BorderThickness="1"
+                Style="{DynamicResource NewTextBox}" />
+
+            <Button
+                Grid.Column="1"
+                Width="30"
+                Height="30"
+                Margin="0,0,20,0"
+                HorizontalAlignment="Right">
+
+                <Viewbox Width="10">
+                    <Path Data="{StaticResource ListIcon}" Fill="{StaticResource PlaceholderBorderText}" />
+                </Viewbox>
+            </Button>
+
+
+
+
+        </Grid>
+        <StackPanel Grid.Row="4">
+            <StackPanel
+                Margin="20,5"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Orientation="Horizontal">
+
+                <TextBlock
+                    Margin="0,0,20,0"
+                    VerticalAlignment="Center"
+                    Text="Due:" />
+                <DatePicker Margin="0,0,20,0" />
+
+                <TextBlock
+                    Margin="0,0,20,0"
+                    VerticalAlignment="Center"
+                    Text="@" />
+                <ComboBox MinWidth="60" SelectedIndex="0" />
+                <TextBlock
+                    Margin="10,0,10,0"
+                    VerticalAlignment="Center"
+                    Text=":" />
+
+                <ComboBox MinWidth="60" SelectedIndex="0" />
+                <TextBlock Margin="5,0,20,0" Text="AM" />
+
+            </StackPanel>
+            <CheckBox
+                Margin="20,10"
+                VerticalAlignment="Center"
+                Content="Include Timer(You can time how long a project takes with a stop watch)." />
+            <CheckBox
+                Margin="20,10"
+                VerticalAlignment="Center"
+                Content="Add task to your calendar" />
+
+
+
+        </StackPanel>
+        <Button
+            Grid.Row="6"
+            Margin="0,0,10,5"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Content="Add Task"
+            Style="{StaticResource AddTaskButton}" />
+
+        <!--  Task Check List  -->
+        <ListView Grid.Row="3" />
+
+
+
+    </Grid>
+</Window>

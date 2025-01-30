@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:TaskTurner"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:TaskTurner.ViewModel"
     Title="MainWindow"
     Width="1150"
     Height="832"
@@ -12,8 +13,11 @@
     MinHeight="500"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
-    <Window.Resources>
 
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
+    <Window.Resources>
         <Storyboard x:Key="SlideOnLoad">
             <DoubleAnimation
                 Storyboard.TargetProperty="Opacity"
@@ -101,6 +105,7 @@
                 Margin="385,0,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
+                Command="{Binding IOpenNewWindow}"
                 Style="{StaticResource RoundAccentButton}">
 
                 <!--  Icon  -->
