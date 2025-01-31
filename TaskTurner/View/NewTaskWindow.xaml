@@ -22,14 +22,22 @@
         </Grid.RowDefinitions>
 
         <!--  Title  -->
+        <ListView
+            x:Name="TaskListBox"
+            Grid.Row="0"
+            Width="105"
+            Margin="350,5,0,5"
+            Padding="20,20,20,20"
+            HorizontalAlignment="Left"
+            BorderBrush="{StaticResource Borders}" />
+
         <TextBox
             x:Name="TaskTitle"
             Grid.Row="0"
-            Margin="10,5,20,10"
+            Margin="20,8,121,8"
             BorderBrush="{StaticResource Borders}"
             BorderThickness="1"
             FontSize="16"
-
             Style="{StaticResource NewTitleTextBox}" />
         <TextBox
             x:Name="TaskDesc"
