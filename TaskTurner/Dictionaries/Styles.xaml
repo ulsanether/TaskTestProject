@@ -231,13 +231,9 @@
 
     </Style>
 
-
-
-
-
-    <Style x:Key="NewTextBox" TargetType="TextBox" />
-
-
+    <Style x:Key="NewTextBox" TargetType="TextBox">
+        <Setter Property="Background" Value="White" />
+    </Style>
     <!--  New title Text Box  -->
     <Style x:Key="NewTitleTextBox" TargetType="TextBox">
         <Setter Property="Background" Value="Black" />
@@ -253,7 +249,6 @@
         </Setter>
 
     </Style>
-
 
     <!--  Add Task Button  -->
     <Style x:Key="AddTaskButton" TargetType="Button">

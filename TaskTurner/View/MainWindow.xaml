@@ -17,18 +17,20 @@
     <Window.DataContext>
         <vm:MainWindowViewModel />
     </Window.DataContext>
+
+
     <Window.Resources>
         <Storyboard x:Key="SlideOnLoad">
             <DoubleAnimation
                 Storyboard.TargetProperty="Opacity"
                 From="0.0"
                 To="1.0"
-                Duration="0:0:1" />
+                Duration="0:0:0.5" />
             <ThicknessAnimation
                 Storyboard.TargetProperty="Margin"
-                From="0,100,0,0"
+                From="0,50,0,0"
                 To="0,0,0,0"
-                Duration="0:0:1">
+                Duration="0:0:0.5">
                 <ThicknessAnimation.EasingFunction>
                     <ExponentialEase EasingMode="EaseOut" />
                 </ThicknessAnimation.EasingFunction>
@@ -50,6 +52,8 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="140" />
         </Grid.ColumnDefinitions>
+
+
         <!--  Nav pane  -->
         <Rectangle Fill="{StaticResource AccentDark}" />
         <StackPanel Margin="10,15,10,10">
@@ -79,6 +83,8 @@
                 </Viewbox>
             </Button>
         </StackPanel>
+
+
         <!--  Task List Background  -->
         <Rectangle Grid.Column="1" Fill="{StaticResource TaskListBackground}" />
 
