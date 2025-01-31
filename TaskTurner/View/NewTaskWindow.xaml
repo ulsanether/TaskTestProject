@@ -34,7 +34,6 @@
             x:Name="TaskTitle"
             Grid.Row="0"
             Margin="20,8,136,8"
-            BorderThickness="2"
             FontSize="16"
             Style="{StaticResource NewTitleTextBox}" />
         <TextBox

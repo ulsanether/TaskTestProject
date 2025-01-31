@@ -70,6 +70,8 @@
     <SolidColorBrush x:Key="TaskListUCTitle" Color="#FF707070" />
 
 
+    <SolidColorBrush x:Key="TaskBoarderColor" Color="#000000" />
+    <SolidColorBrush x:Key="TaskBorderFill" Color="#FFFFFF" />
 
 
 </ResourceDictionary>

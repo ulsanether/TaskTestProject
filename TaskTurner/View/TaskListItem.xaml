@@ -41,7 +41,7 @@
             Grid.Row="1"
             Margin="20,0,5,0"
             Foreground="{StaticResource TaskListUCText}"
-            Text="어쩌고 저쩌고 어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고"
+            Text="어쩌고 저쩌고 어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고 저쩌고어쩌고 저쩌고저쩌고어쩌고 저쩌고저쩌고어쩌고 저쩌고저쩌고어쩌고 저쩌고"
             TextWrapping="Wrap" />
         <TextBlock
             Grid.Row="2"
