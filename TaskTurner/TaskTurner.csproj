@@ -132,7 +132,6 @@
     <Folder Include="Assets\Files\data\" />
     <Folder Include="Assets\Files\Txt\" />
     <Folder Include="Assets\Images\" />
-    <Folder Include="NewFolder1\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

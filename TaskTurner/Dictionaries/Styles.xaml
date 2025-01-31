@@ -124,12 +124,8 @@
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
-
-
             </Setter.Value>
-
         </Setter>
-
     </Style>
 
     <!--  Edit Button  -->
@@ -240,14 +236,13 @@
 
     <!--  New title Text Box  -->
     <Style x:Key="NewTitleTextBox" TargetType="TextBox">
-
-        <Setter Property="Background" Value="White" />
+        <Setter Property="Background" Value="Black" />
         <Setter Property="BorderBrush" Value="{StaticResource Borders}" />
         <Setter Property="Cursor" Value="IBeam" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
-                    <Border Background="{StaticResource WindowsBackground}" CornerRadius="10" />
+                    <Border Background="White" CornerRadius="10" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -282,12 +277,8 @@
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
-
-
             </Setter.Value>
-
         </Setter>
-
     </Style>
 
 

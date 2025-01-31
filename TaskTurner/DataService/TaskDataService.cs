@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -55,6 +56,8 @@ namespace TaskTurner.DataService {
 
             }
 
-         }
+         //For Debug purposes
+         Process.Start(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),folderName)); 
+            }
       }
    }
