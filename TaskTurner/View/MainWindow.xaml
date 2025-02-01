@@ -113,7 +113,11 @@
                 VerticalAlignment="Center"
                 Command="{Binding IOpenNewWindow}"
                 Style="{StaticResource RoundAccentButton}">
+                <Button.DataContext>
 
+                    <vm:MainWindowViewModel />
+
+                </Button.DataContext>
                 <!--  Icon  -->
                 <Viewbox Width="16" Height="16">
                     <Path Data="{StaticResource NewTaskIcon}" Fill="{StaticResource OnAccent}" />

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace TaskTurner.Model {
    public class Task {
@@ -18,9 +20,14 @@ namespace TaskTurner.Model {
       public TimeSpan Timer { get; set; }
 
 
-      public TaskStatus TaskStatus { get; set; }
+      public TaskStatus TaskStte { get; set; }
       public TaskImportance TaskImportance { get; set; }
       public TaskCategory TaskCategory { get; set; }
+
+
+      public ObservableCollection<TaskCheckList> TaskCheckList { get; set; } 
+
+
 
       }
 

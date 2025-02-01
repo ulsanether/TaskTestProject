@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using TaskTurner.ViewModel;
+
 namespace TaskTurner {
    /// <summary>
    /// MainWindow.xaml에 대한 상호 작용 논리
@@ -20,6 +22,9 @@ namespace TaskTurner {
    public partial class MainWindow:Window {
       public MainWindow() {
          InitializeComponent();
+
+
+         this.DataContext = new TaskViewModel();
          }
       }
    }
