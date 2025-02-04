@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using TaskTurner.ViewModel;
+
+
 namespace TaskTurner.View {
    /// <summary>
    /// NewTaskWindow.xaml에 대한 상호 작용 논리
@@ -19,6 +22,9 @@ namespace TaskTurner.View {
    public partial class NewTaskWindow:Window {
       public NewTaskWindow() {
          InitializeComponent();
+
+         DataContext = new TaskViewModel();
+
          }
       }
    }

@@ -10,7 +10,7 @@
     Width="1150"
     Height="832"
     MinWidth="1150"
-    MinHeight="500"
+    MinHeight="600"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
 

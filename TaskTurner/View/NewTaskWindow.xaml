@@ -13,10 +13,10 @@
     <Grid Margin="20,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
+            <RowDefinition Height="200" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="30" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="150" />
             <RowDefinition Height="40" />
 
         </Grid.RowDefinitions>
@@ -33,9 +33,10 @@
         <TextBox
             x:Name="TaskTitle"
             Grid.Row="0"
-            Margin="20,8,136,8"
+            Margin="2,8,136,8"
             FontSize="16"
-            Style="{StaticResource NewTitleTextBox}" />
+            Style="{StaticResource NewTitleTextBox}"
+            Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" />
         <TextBox
             x:Name="TaskDesc"
             Grid.Row="1"
@@ -50,6 +51,7 @@
             IsInactiveSelectionHighlightEnabled="True"
             IsUndoEnabled="True"
             Style="{StaticResource NewTextBox}"
+            Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
             TextAlignment="Left" />
         <Label
             Grid.Row="1"
@@ -99,7 +101,7 @@
                     Margin="0,0,20,0"
                     VerticalAlignment="Center"
                     Text="Due:" />
-                <DatePicker Margin="0,0,20,0" />
+                <DatePicker Margin="0,0,20,0" SelectedDate="{Binding DueDate, UpdateSourceTrigger=PropertyChanged}" />
 
                 <TextBlock
                     Margin="0,0,20,0"
@@ -128,12 +130,13 @@
 
         </StackPanel>
         <Button
-            Grid.Row="6"
+            Grid.Row="5"
             Margin="0,0,10,5"
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
+            Command="{Binding IAddNewTask}"
             Content="Add Task"
-            Style="{StaticResource AddTaskButton}" />
+            Style="{StaticResource TaskViewCompleteButton}" />
 
         <!--  Task Check List  -->
         <ListView Grid.Row="3" Margin="20,10,20,5" />
